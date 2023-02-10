@@ -1,14 +1,3 @@
-Replace this with your complete HTML from Lab 1
-
-Hook it up to CSS by including style.css in the <head> tag
-
-Then add CSS class names to your HTML to make it look like the lab pictures.
-For example: <div class="selector">
-
-You should not need to edit the CSS to do this, only the HTML.
-
-Don't forget to add an actual set of image descriptions to your image carousel.
-
 <html lang="en">
 <head>
   <meta charset="UTF-8">
@@ -24,30 +13,35 @@ Don't forget to add an actual set of image descriptions to your image carousel.
     <header class="header"><h1>Paula's Labs for INST377</h1></header>
     <div class="container">
 
-      <div>
+      <div class="left_section box">
         <h2>Albums</h2> 
-        <ol>
-          <li>SOS</li>
-          <li>Midnights</li>
-          <li>The Sailor</li>
-          <li>Mamma Mia! The Movie Soundtrack</li>
-          <li>The Melodic Blue</li>
-        </ol>
+        <div class="box">
+          <ol>
+            <li>SOS</li>
+            <li>Midnights</li>
+            <li>The Sailor</li>
+            <li>Mamma Mia! The Movie Soundtrack</li>
+            <li>The Melodic Blue</li>
+          </ol>  
+        </div> 
       </div>
 
-      <div><h2>The image Carousel</h2>
-        <img src="images/mochi.jpg" alt="mochi inside a bubble">
-        <img src="images/mochi.gif" alt="bouncing mochi">
-        <img src="images/mochi.png" alt="smiling mochi">
-        <img src="images/mochi.svg" alt="pen tool on mochi face">
+      <div class="right_section box">
+          <h2>Image Carousel</h2>
+          <div class="grid">
+            <img src="images/mochi.jpg" width="150" alt="mochi inside a bubble">
+            <img src="images/mochi.gif" width="150" alt="bouncing mochi">
+            <img src="images/mochi.png" width="150" alt="smiling mochi">
+            <img src="images/mochi.svg" width="150" alt="pen tool on mochi face">    
+          </div>
+          <div class="box">
+            Four images of mochi
+          </div>    
       </div>
-      
-      <div>
-          description of images
-      </div>
+
+
     </div>
   </div>
-
-  <footer><a href="http://github.com/pshin15/INST377-Lab-Work" target="_blank" rel="noopener noreferrer">Paula Shin's Github</a></footer>
+  <footer class = "footer"><a href="http://github.com/pshin15/INST377-Lab-Work" target="_blank" rel="noopener noreferrer">Paula Shin's Github</a></footer>
 </body>
 </html>
