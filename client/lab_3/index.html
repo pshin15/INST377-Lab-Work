@@ -3,3 +3,56 @@
     - The styles in this folder's `style.css`
     - The script in script.js, which should be included via a `<script src="script.js" >` call before your closing </body> tag 
 -->
+
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Paula's Labs</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+
+<body> 
+  <div class="wrapper">
+    <header class="header"><h1>Paula's Labs for INST377</h1></header>
+    <div class="container">
+
+      <div class="left_section box">
+        <h2>Albums</h2> 
+        <div class="box">
+          <ol>
+            <li>SOS</li>
+            <li>Midnights</li>
+            <li>The Sailor</li>
+            <li>Mamma Mia! The Movie Soundtrack</li>
+            <li>The Melodic Blue</li>
+          </ol>  
+        </div> 
+      </div>
+
+      <div class="right_section box">
+          <h2>Image Carousel</h2>
+          <div class="carousel">
+            <button class="prev">prev</button>
+            <div class="slides">
+              <div class="carousel_item" visible><img src="images/schnoodle1.jpg" width="150" alt="An image of a schnoodle"></div>
+              <div class="carousel_item" hidden><img src="images/schnoodle2.jpg" width="150" alt="An image of a schnoodle"></div>
+              <div class="carousel_item" hidden><img src="images/poodle1.jpg" width="150" alt="An image of a poodle"></div>
+              <div class="carousel_item" hidden><img src="images/poodle2.jpg" width="150" alt="An image of a poodle"></div>
+            </div>  
+            <button class="next">next</button>
+          </div>
+          <div class="box">
+            Four images of dogs
+          </div>    
+      </div>
+
+
+    </div>
+  </div>
+  <footer class = "footer"><a href="http://github.com/pshin15/INST377-Lab-Work" target="_blank" rel="noopener noreferrer">Paula Shin's Github</a></footer>
+  <script src="script.js">
+  </script></body>
+</html>
