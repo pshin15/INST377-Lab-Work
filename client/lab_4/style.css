@@ -128,14 +128,14 @@ form {
 }
 
 .left_section {
-  background-color: rgba(46, 153, 153, 0.8); 
+  background-color: #CB6B91;
   flex: 0 1 auto;
   margin: 1rem;
   padding: 1.5rem;
 }
 
 .right_section {
-  background-color: rgba(53, 67, 228, 0.7);
+  background-color: #B087B5;
   flex: 1 2 auto;
   margin: 1rem;
   align-items: center;
@@ -171,7 +171,7 @@ form {
   /* Hue, saturation, luminosity, alpha */
   background-color: hsla(0, 0%, 90%, 0.15);
   /* red, green, blue, alpha */
-  color: rgb(246, 169, 93);
+  color: rgb(249, 255, 180);
   text-decoration: none;
 }
 
@@ -301,7 +301,7 @@ form label {
     /* Rules in here will only apply when a screen is the correct size */
     /* check it out by using your developer tools to shrink your screen-size */
     .container {
-      background-color: rgba(234, 133, 212, 0.65);
+      background-color: #c7a1ac;
       flex-direction: column;
       justify-content: center;
       align-items: center;
