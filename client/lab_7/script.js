@@ -9,7 +9,7 @@ function injectHTML(list) {
   const target = document.querySelector("#restaurant_list");
   target.innerHTML = "";
   list.forEach((item) => {
-    const str = "<li>${item.name}</li>";
+    const str = `<li>${item.name}</li>`;
     target.innerHTML += str;
   });
 }
@@ -101,6 +101,6 @@ async function mainEvent() {
     console.log(currentList);
     injectHTML(currentList);
   });
-} 
+}
 
 document.addEventListener("DOMContentLoaded", async () => mainEvent()); // the async keyword means we can make API requests
