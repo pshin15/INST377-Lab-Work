@@ -38,7 +38,7 @@ async function mainEvent() {
   const filterButton = document.querySelector("#filter");
   const loadDataButton = document.querySelector("#data_load");
   const generateListButton = document.querySelector("#generate");
-  const textField = document.querySelector("resto");
+  const textField = document.querySelector("#resto");
 
   const loadAnimation = document.querySelector("#data_load_animation");
   loadAnimation.style.display = "none";
@@ -90,7 +90,7 @@ async function mainEvent() {
 
   generateListButton.addEventListener("click", (event) => {
     console.log("generate new list");
-    currentList = cutRestaurantList(currentList);
+    currentList = cutRestaurantList(storedList);
     console.log(currentList);
     injectHTML(currentList);
   });
