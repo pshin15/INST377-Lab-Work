@@ -101,6 +101,6 @@ async function mainEvent() {
     console.log(currentList);
     injectHTML(currentList);
   });
-}
+} 
 
 document.addEventListener("DOMContentLoaded", async () => mainEvent()); // the async keyword means we can make API requests
