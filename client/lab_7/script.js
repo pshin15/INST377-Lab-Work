@@ -43,8 +43,15 @@ async function mainEvent() {
   const loadAnimation = document.querySelector("#data_load_animation");
   loadAnimation.style.display = "none";
   generateListButton.classList.add("hidden");
+  
+  const storedData = localStorage.getItem('storedData');
+  const parsedData = JSON.parse(storedData);
+  const storedList = JSON.parse(storedData); 
+  if (parsedData.length > 0) {
+    generateListButton.classList.remove("hidden");
+  }
 
-  let storedList = [];
+  // let storedList = [];
   let currentList = []; // this is "scoped" to the main event function
 
   /* We need to listen to an "event" to have something happen in our page - here we're listening for a "submit" */
@@ -59,33 +66,15 @@ async function mainEvent() {
     );
 
     // This changes the response from the GET into data we can use - an "object"
-    storedList = await results.json();
+    const storedList = await results.json();
+    localStorage.setItem('storedData', JSON.stringify(storedList));
     if (storedList.length > 0) {
       generateListButton.classList.remove("hidden");
     }
 
     loadAnimation.style.display = "none";
-    console.table(storedList);
+    // console.table(storedList);
 
-    /*
-        This array initially contains all 1,000 records from your request,
-        but it will only be defined _after_ the request resolves - any filtering on it before that
-        simply won't work.
-      */
-    console.table(currentList);
-  });
-
-  filterButton.addEventListener("click", (event) => {
-    console.log("clicked FilterButton");
-
-    const formData = new FormData(mainForm);
-    const formProps = Object.fromEntries(formData);
-
-    console.log(formProps);
-    const newList = filterList(currentList, formProps.resto);
-
-    console.log(newList);
-    injectHTML(newList);
   });
 
   generateListButton.addEventListener("click", (event) => {
@@ -98,8 +87,8 @@ async function mainEvent() {
   textField.addEventListener("input", (event) => {
     console.log("input", event.target.value);
     const newList = filterList(currentList, event.target.value);
-    console.log(currentList);
-    injectHTML(currentList);
+    console.log(newList);
+    injectHTML(newList);
   });
 }
 
