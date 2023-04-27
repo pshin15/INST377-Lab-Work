@@ -44,7 +44,8 @@ async function mainEvent() {
   loadAnimation.style.display = "none";
   generateListButton.classList.add("hidden");
   
-/*  const storedData = localStorage.getItem('storedData');
+/*  
+  const storedData = localStorage.getItem('storedData');
   const parsedData = JSON.parse(storedData);
   const storedList = JSON.parse(storedData); 
   if (parsedData.length > 0) {
@@ -75,6 +76,7 @@ async function mainEvent() {
 
     loadAnimation.style.display = "none";
     console.table(storedList);
+    injectHTML(storedList);
 
   });
 
