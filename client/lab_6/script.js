@@ -39,22 +39,22 @@ async function mainEvent() { // the async keyword means we can make API requests
   const generateListButton = document.querySelector('#generate');
 
   const loadAnimation = document.querySelector('#data_load_animation');
-  loadAnimation.style.display = 'none';
+  //loadAnimation.style.display = 'none';
 
   let currentList = []; // this is "scoped" to the main event function
   
   /* We need to listen to an "event" to have something happen in our page - here we're listening for a "submit" */
   loadDataButton.addEventListener('click', async (submitEvent) => { // async has to be declared on every function that needs to "await" something
     console.log('Loading Data'); 
-    loadAnimation.style.display='inline-block';
+    //loadAnimation.style.display ='inline-block';
 
     // Basic GET request - this replaces the form Action
     const results = await fetch('https://data.princegeorgescountymd.gov/resource/umjn-t2iz.json');
 
     // This changes the response from the GET into data we can use - an "object"
     currentList = await results.json();
-    loadAnimation.style.display = 'none';
     console.table(currentList);
+    //loadAnimation.style.display = 'none';
 
     /*
       This array initially contains all 1,000 records from your request,
@@ -83,7 +83,6 @@ async function mainEvent() { // the async keyword means we can make API requests
     const restaurantsList = cutRestaurantList(currentList);
     console.log(restaurantsList);
     injectHTML(restaurantsList);
-
   })
 }
 
