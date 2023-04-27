@@ -44,14 +44,15 @@ async function mainEvent() {
   loadAnimation.style.display = "none";
   generateListButton.classList.add("hidden");
   
-  const storedData = localStorage.getItem('storedData');
+/*  const storedData = localStorage.getItem('storedData');
   const parsedData = JSON.parse(storedData);
   const storedList = JSON.parse(storedData); 
   if (parsedData.length > 0) {
     generateListButton.classList.remove("hidden");
   }
+*/
 
-  // let storedList = [];
+  let storedList = [];
   let currentList = []; // this is "scoped" to the main event function
 
   /* We need to listen to an "event" to have something happen in our page - here we're listening for a "submit" */
@@ -66,14 +67,14 @@ async function mainEvent() {
     );
 
     // This changes the response from the GET into data we can use - an "object"
-    const storedList = await results.json();
-    localStorage.setItem('storedData', JSON.stringify(storedList));
+    storedList = await results.json();
+    //localStorage.setItem('storedData', JSON.stringify(storedList));
     if (storedList.length > 0) {
       generateListButton.classList.remove("hidden");
     }
 
     loadAnimation.style.display = "none";
-    // console.table(storedList);
+    console.table(storedList);
 
   });
 
