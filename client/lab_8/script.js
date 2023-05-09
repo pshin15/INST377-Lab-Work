@@ -74,14 +74,7 @@ function getRandomIntInclusive(min, max) {
 
     const carto = initMap();
     
-    const storedData = localStorage.getItem('storedData');
-    let parsedData = JSON.parse(storedData);
-    const storedList = JSON.parse(storedData); 
-    if (parsedData?.length > 0) {
-      generateListButton.classList.remove("hidden");
-    }
-  
-    // let storedList = [];
+    //let storedList = [];
     let currentList = []; // this is "scoped" to the main event function
   
     /* We need to listen to an "event" to have something happen in our page - here we're listening for a "submit" */
@@ -96,16 +89,23 @@ function getRandomIntInclusive(min, max) {
       );
   
       // This changes the response from the GET into data we can use - an "object"
-      const storedList = await results.json();
+      storedList = await results.json();
       localStorage.setItem('storedData', JSON.stringify(storedList));
       parsedData = storedList;
 
       if (parsedData?.length > 0) {
         generateListButton.classList.remove("hidden");
       }
+
+      const storedData = localStorage.getItem('storedData');
+      let parsedData = JSON.parse(storedData);
+      const storedList = JSON.parse(storedData); 
+      if (parsedData?.length > 0) {
+        generateListButton.classList.remove("hidden");
+      }
   
       loadAnimation.style.display = "none";
-      // console.table(storedList);
+      console.table(storedList);
   
     });
   
